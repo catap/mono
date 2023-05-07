@@ -4962,7 +4962,7 @@ if test "x$enable_vtune" = "xyes"; then
 	AC_SUBST(VTUNE_CFLAGS)
 fi
 dnl Use GCC atomic ops if they work on the target.
-if test x$GCC = "xyes"; then
+if test x$GCC = "xyes" && test x$host_darwin = xno; then
 	case $TARGET in
 	X86 | AMD64 | ARM | ARM64 | ARM6432 | POWERPC | POWERPC64 | MIPS | S390X | SPARC | SPARC64 | RISCV32 | RISCV64)
 		AC_DEFINE(USE_GCC_ATOMIC_OPS, 1, [...])
